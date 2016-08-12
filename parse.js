@@ -33,5 +33,7 @@ module.exports = function () {
         help: 'Specifies the input files. If no input files are supplied, the program reads from stdin.'
     });
 
-    return parser.parseArgs();
+    var args = parser.parseArgs();
+    args.prog = parser.prog;
+    return args;
 };
