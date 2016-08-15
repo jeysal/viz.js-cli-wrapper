@@ -15,12 +15,12 @@
     "url": "https://github.com/jeysal/viz.js-cli-wrapper"
   },
   "bin": {
-    "circo": "./vizw.js",
-    "dot": "./vizw.js",
-    "fdp": "./vizw.js",
-    "neato": "./vizw.js",
-    "osage": "./vizw.js",
-    "twopi": "./vizw.js"
+    "circo": "src/vizw.js",
+    "dot": "src/vizw.js",
+    "fdp": "src/vizw.js",
+    "neato": "src/vizw.js",
+    "osage": "src/vizw.js",
+    "twopi": "src/vizw.js"
   },
   "dependencies": {
     "argparse": "1.0.7",
