@@ -14,8 +14,9 @@ module.exports = function () {
     });
     parser.addArgument('-T', {
         choices: ['svg', 'xdot', 'plain', 'ps'],
+        defaultValue: 'xdot',
         metavar: 'format',
-        help: 'Set output language to one of the supported formats. By default, svg is produced.'
+        help: 'Set output language to one of the supported formats. By default, xdot is produced.'
     });
     parser.addArgument('-V', {
         action: 'storeTrue',

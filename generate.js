@@ -6,6 +6,6 @@ module.exports = function (data, args) {
 
     return require('viz.js')(data, {
         engine: args.K || args.prog,
-        format: args.T || 'svg'
+        format: args.T
     });
 };
