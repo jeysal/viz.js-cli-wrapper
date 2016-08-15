@@ -13,8 +13,12 @@ module.exports = function (args) {
 
     if (args.files.length)
         args.files.forEach(function (file, i) {
-            var input = fs.readFileSync(file, 'utf8');
-            write(generate(input, args), i > 0 ? process.stdout : firstTarget);
+            try {
+                var input = fs.readFileSync(file, 'utf8');
+                write(generate(input, args), i > 0 ? process.stdout : firstTarget);
+            } catch (err) {
+                console.error(err);
+            }
         });
     else {
         var input = '';
@@ -22,7 +26,11 @@ module.exports = function (args) {
             input += data;
         });
         process.stdin.on('end', function () {
-            write(generate(input, args), firstTarget);
+            try {
+                write(generate(input, args), firstTarget);
+            } catch (err) {
+                console.error(err);
+            }
         });
     }
 };
