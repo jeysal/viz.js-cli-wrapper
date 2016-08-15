@@ -8,12 +8,13 @@ module.exports = function (args) {
     var write = require('./write.js');
 
     var fs = require('fs');
-    var target = args.o ? fs.createWriteStream(args.o) : process.stdout;
+    // Write to output file only once, the other results go to stdout
+    var firstTarget = args.o ? fs.createWriteStream(args.o) : process.stdout;
 
     if (args.files.length)
-        args.files.forEach(function (file) {
+        args.files.forEach(function (file, i) {
             var input = fs.readFileSync(file, 'utf8');
-            write(generate(input, args), target);
+            write(generate(input, args), i > 0 ? process.stdout : firstTarget);
         });
     else {
         var input = '';
@@ -21,7 +22,7 @@ module.exports = function (args) {
             input += data;
         });
         process.stdin.on('end', function () {
-            write(generate(input, args), target);
+            write(generate(input, args), firstTarget);
         });
     }
 };
