@@ -15,4 +15,13 @@ module.exports = function (args) {
             var input = fs.readFileSync(file, 'utf8');
             write(generate(input, args), target);
         });
+    else {
+        var input = '';
+        process.stdin.on('data', function (data) {
+            input += data;
+        });
+        process.stdin.on('end', function () {
+            write(generate(input, args), target);
+        });
+    }
 };
