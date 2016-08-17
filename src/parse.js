@@ -30,7 +30,7 @@ module.exports = function () {
     // pos args
     parser.addArgument('files', {
         nargs: '*',
-        metavar: 'file',
+        metavar: 'input file',
         help: 'Specifies the input files. If no input files are supplied, the program reads from stdin.'
     });
 
