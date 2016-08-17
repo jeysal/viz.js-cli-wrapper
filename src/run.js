@@ -2,7 +2,7 @@ module.exports = function (args) {
     'use strict';
 
     if (args.V)
-        console.log(args.prog + ' - graphviz version 2.38.0 (20140413.2041)');
+        return console.log(args.prog + ' - graphviz version 2.38.0 (20140413.2041)');
 
     var generate = require('./generate.js');
     var write = require('./write.js');
