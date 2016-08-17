@@ -33,6 +33,7 @@
   "devDependencies": {
     "mocha": "3.0.2",
     "chai": "3.5.0",
-    "std-mocks": "1.0.1"
+    "std-mocks": "1.0.1",
+    "mock-stdin": "0.3.0"
   }
 }

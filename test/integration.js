@@ -14,6 +14,9 @@ describe('The CLI called with', function () {
         return stdMocks.flush().stdout.join('');
     }
 
+    // mock-stdin
+    var stdin = require('mock-stdin').stdin();
+
     // resources
     var fs = require('fs');
     var gv = fs.readFileSync('test/resources/source.gv', 'utf8');
@@ -28,6 +31,8 @@ describe('The CLI called with', function () {
     afterEach(function () {
         stdMocks.restore();
         stdMocks.flush();
+
+        stdin.reset(true);
     });
 
     describe('-V', function () {
