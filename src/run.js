@@ -11,6 +11,11 @@ module.exports = function (args) {
     // Write to output file only once, the other results go to stdout
     var firstTarget = args.o ? fs.createWriteStream(args.o) : process.stdout;
 
+    firstTarget.on('error', function (err) {
+        console.error(err);
+        process.exit(80);
+    });
+
     if (args.files.length)
         args.files.forEach(function (file, i) {
             try {
