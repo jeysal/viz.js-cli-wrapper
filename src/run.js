@@ -20,11 +20,11 @@ module.exports = function (args) {
         args.files.forEach(function (file, i) {
             try {
                 var input = fs.readFileSync(file, 'utf8');
-                write(generate(input, args), i > 0 ? process.stdout : firstTarget);
             } catch (err) {
                 console.error(err);
                 process.exit(70);
             }
+            write(generate(input, args), i > 0 ? process.stdout : firstTarget);
         });
     else {
         var input = '';
@@ -32,12 +32,7 @@ module.exports = function (args) {
             input += data;
         });
         process.stdin.on('end', function () {
-            try {
-                write(generate(input, args), firstTarget);
-            } catch (err) {
-                console.error(err);
-                process.exit(71);
-            }
+            write(generate(input, args), firstTarget);
         });
     }
 };
