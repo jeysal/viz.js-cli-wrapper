@@ -14,6 +14,10 @@ describe('The CLI called with', function () {
         return stdMocks.flush().stdout.join('');
     }
 
+    // resources
+    var fs = require('fs');
+    var gv = fs.readFileSync('test/resources/source.gv', 'utf8');
+
     beforeEach(function () {
         args = {K: null, T: 'xdot', V: false, o: null, files: [], prog: 'dot'};
 
