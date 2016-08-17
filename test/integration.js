@@ -21,6 +21,7 @@ describe('The CLI called', function () {
     var fs = require('fs');
     var gv = fs.readFileSync('test/resources/source.gv', 'utf8');
     var dotXdot = fs.readFileSync('test/resources/dot.xdot', 'utf8');
+    var circoXdot = fs.readFileSync('test/resources/circo.xdot', 'utf8');
 
     beforeEach(function () {
         args = {K: null, T: 'xdot', V: false, o: null, files: [], prog: 'dot'};
