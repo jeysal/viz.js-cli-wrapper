@@ -35,6 +35,15 @@ describe('The CLI called with', function () {
         stdin.reset(true);
     });
 
+    describe('nothing', function () {
+        it('should produce stdout xdot from stdin dot', function () {
+            run(args);
+            stdin.send(gv);
+            stdin.end();
+            stdout().should.equal(dotXdot);
+        });
+    });
+
     describe('-V', function () {
         beforeEach(function () {
             args.V = true;
