@@ -18,6 +18,7 @@ module.exports = function (args) {
                 write(generate(input, args), i > 0 ? process.stdout : firstTarget);
             } catch (err) {
                 console.error(err);
+                process.exit(70);
             }
         });
     else {
@@ -30,6 +31,7 @@ module.exports = function (args) {
                 write(generate(input, args), firstTarget);
             } catch (err) {
                 console.error(err);
+                process.exit(71);
             }
         });
     }
