@@ -1,6 +1,6 @@
 'use strict';
 
-describe('The CLI called with', function () {
+describe('The CLI called', function () {
     var run = require('../src/run.js');
     var args;
 
@@ -35,7 +35,7 @@ describe('The CLI called with', function () {
         stdin.reset(true);
     });
 
-    describe('nothing', function () {
+    describe('without arguments', function () {
         it('should produce stdout xdot from stdin dot', function () {
             run(args);
             stdin.send(gv);
@@ -44,7 +44,7 @@ describe('The CLI called with', function () {
         });
     });
 
-    describe('-V', function () {
+    describe('with -V', function () {
         beforeEach(function () {
             args.V = true;
         });
