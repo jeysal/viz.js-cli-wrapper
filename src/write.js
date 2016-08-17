@@ -5,5 +5,5 @@ module.exports = function (data, target) {
         console.error(err);
     });
 
-    target.write(data);
+    target.write(data, 'utf8');
 };
