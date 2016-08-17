@@ -6,6 +6,7 @@ module.exports = function (args) {
 
     var generate = require('./generate.js');
     var write = require('./write.js');
+    var exitCodes = require('./exit-codes.js');
 
     var fs = require('fs');
     // Write to output file only once, the other results go to stdout
@@ -13,7 +14,7 @@ module.exports = function (args) {
 
     firstTarget.on('error', function (err) {
         console.error(err);
-        process.exit(80);
+        process.exit(exitCodes.writeErr);
     });
 
     if (args.files.length)
@@ -22,7 +23,7 @@ module.exports = function (args) {
                 var input = fs.readFileSync(file, 'utf8');
             } catch (err) {
                 console.error(err);
-                process.exit(70);
+                process.exit(exitCodes.readErr);
             }
             write(generate(input, args), i > 0 ? process.stdout : firstTarget);
         });
