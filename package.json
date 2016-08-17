@@ -14,6 +14,9 @@
     "type": "git",
     "url": "https://github.com/jeysal/viz.js-cli-wrapper"
   },
+  "files": [
+    "src/"
+  ],
   "main": "src/run.js",
   "bin": {
     "circo": "src/vizw.js",
