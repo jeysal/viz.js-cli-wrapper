@@ -43,6 +43,13 @@ describe('The CLI called', function () {
             stdin.end();
             stdout().should.equal(dotXdot);
         });
+        it('should use the layout of the called executable', function () {
+            args.prog = 'circo';
+            run(args);
+            stdin.send(gv);
+            stdin.end();
+            stdout().should.equal(circoXdot);
+        });
     });
 
     describe('with -V', function () {
