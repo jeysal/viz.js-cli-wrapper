@@ -4,8 +4,10 @@ describe('The CLI called with', function () {
     var run = require('../src/run.js');
     var args;
 
+    // chai
     require('chai').should();
 
+    // std-mocks
     var stdMocks = require('std-mocks');
 
     function stdout() {
