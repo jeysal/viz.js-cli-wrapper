@@ -50,3 +50,7 @@ For the full help text containing further information, run any of the executable
 ## Credits
 
 A huge thanks to [Mike Daines](https://github.com/mdaines) for making GraphViz to some extent portable with [viz.js](https://github.com/mdaines/viz.js)!
+
+## License
+
+viz.js-cli-wrapper is [MIT-licensed](https://github.com/jeysal/viz.js-cli-wrapper/blob/master/LICENSE).
