@@ -26,10 +26,15 @@ describe('The CLI called', function () {
     var fs = require('fs');
     var resourcePath = 'src/test/resources/';
 
-    var gv = fs.readFileSync(resourcePath + 'source.gv', 'utf8');
-    var dotXdot = fs.readFileSync(resourcePath + 'dot.xdot', 'utf8');
-    var circoXdot = fs.readFileSync(resourcePath + 'circo.xdot', 'utf8');
-    var dotSvg = fs.readFileSync(resourcePath + 'dot.svg', 'utf8');
+    var resources = [0, 1].map(function (e) {
+        var basePath = resourcePath + e + '/';
+        return {
+            gv: fs.readFileSync(basePath + 'source.gv', 'utf8'),
+            dotXdot: fs.readFileSync(basePath + 'dot.xdot', 'utf8'),
+            circoXdot: fs.readFileSync(basePath + 'circo.xdot', 'utf8'),
+            dotSvg: fs.readFileSync(basePath + 'dot.svg', 'utf8')
+        };
+    });
 
     beforeEach(function () {
         args = {K: null, T: 'xdot', V: false, o: null, inputs: [], prog: 'dot'};
@@ -47,19 +52,19 @@ describe('The CLI called', function () {
     describe('without arguments', function () {
         it('should produce stdout xdot from stdin dot', function () {
             run(args);
-            stdin.send(gv);
+            stdin.send(resources[0].gv);
             stdin.end();
 
-            stdout().should.equal(dotXdot);
+            stdout().should.equal(resources[0].dotXdot);
         });
         it('should use the layout of the called executable', function () {
             args.prog = 'circo';
 
             run(args);
-            stdin.send(gv);
+            stdin.send(resources[0].gv);
             stdin.end();
 
-            stdout().should.equal(circoXdot);
+            stdout().should.equal(resources[0].circoXdot);
         });
     });
 
@@ -69,10 +74,10 @@ describe('The CLI called', function () {
             args.K = 'circo';
 
             run(args);
-            stdin.send(gv);
+            stdin.send(resources[0].gv);
             stdin.end();
 
-            stdout().should.equal(circoXdot);
+            stdout().should.equal(resources[0].circoXdot);
         })
     });
 
@@ -81,10 +86,10 @@ describe('The CLI called', function () {
             args.T = 'svg';
 
             run(args);
-            stdin.send(gv);
+            stdin.send(resources[0].gv);
             stdin.end();
 
-            stdout().should.equal(dotSvg);
+            stdout().should.equal(resources[0].dotSvg);
         });
     });
 
@@ -118,17 +123,17 @@ describe('The CLI called', function () {
             args.o = file.name;
 
             run(args);
-            stdin.send(gv);
+            stdin.send(resources[0].gv);
             stdin.end();
 
-            fs.readFileSync(file.name, 'utf8').should.equal(dotXdot);
+            fs.readFileSync(file.name, 'utf8').should.equal(resources[0].dotXdot);
         });
         it('should not write to stdout', function () {
             var file = tmp.fileSync();
             args.o = file.name;
 
             run(args);
-            stdin.send(gv);
+            stdin.send(resources[0].gv);
             stdin.end();
 
             stdout().should.equal('');
@@ -137,10 +142,10 @@ describe('The CLI called', function () {
 
     describe('with input files', function () {
         it('should read from a single input file', function () {
-            args.inputs.push(resourcePath + 'source.gv');
+            args.inputs.push(resourcePath + '0/source.gv');
 
             run(args);
-            stdout().should.equal(dotXdot);
+            stdout().should.equal(resources[0].dotXdot);
         });
     });
 });
