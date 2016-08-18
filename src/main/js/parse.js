@@ -31,7 +31,7 @@ module.exports = function () {
     parser.addArgument('inputs', {
         nargs: '*',
         metavar: 'input file',
-        help: 'Specifies the input files. If no input files are supplied, the program reads from stdin.'
+        help: 'Specifies an input file. If no input files are supplied, the program reads from stdin.'
     });
 
     var args = parser.parseArgs();
