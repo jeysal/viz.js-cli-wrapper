@@ -121,5 +121,15 @@ describe('The CLI called', function () {
 
             fs.readFileSync(file.name, 'utf8').should.equal(dotXdot);
         });
+        it('should not write to stdout', function () {
+            var file = tmp.fileSync();
+            args.o = file.name;
+
+            run(args);
+            stdin.send(gv);
+            stdin.end();
+
+            stdout().should.equal('');
+        });
     });
 });
