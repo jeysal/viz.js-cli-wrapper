@@ -103,6 +103,11 @@ describe('The CLI called', function () {
 
             stdout().should.equal('circo - graphviz version 2.38.0 (20140413.2041)\n');
         });
+        it('should return quickly', function () {
+            this.timeout(100);
+
+            run(args);
+        });
     });
 
     describe('with -o', function () {
