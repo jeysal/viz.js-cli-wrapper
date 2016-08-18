@@ -94,4 +94,15 @@ describe('The CLI called', function () {
             stdout().should.equal('circo - graphviz version 2.38.0 (20140413.2041)\n');
         });
     });
+
+    describe('with -o', function () {
+        it('should write to the output file', function () {
+            var file = tmp.fileSync();
+            args.o = file.name;
+            run(args);
+            stdin.send(gv);
+            stdin.end();
+            fs.readFileSync(file.name, 'utf8').should.equal(dotXdot);
+        });
+    });
 });
