@@ -66,6 +66,16 @@ describe('The CLI called', function () {
         })
     });
 
+    describe('with -T', function () {
+        it('should produce the specified format', function () {
+            args.T = 'svg';
+            run(args);
+            stdin.send(gv);
+            stdin.end();
+            stdout().should.equal(dotSvg);
+        });
+    });
+
     describe('with -V', function () {
         beforeEach(function () {
             args.V = true;
