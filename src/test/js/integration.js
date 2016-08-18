@@ -147,5 +147,11 @@ describe('The CLI called', function () {
             run(args);
             stdout().should.equal(resources[0].dotXdot);
         });
+        it('should read from multiple input files and print their results to stdout', function () {
+            args.inputs.push(resourcePath + '0/source.gv', resourcePath + '1/source.gv');
+
+            run(args);
+            stdout().should.equal(resources[0].dotXdot + resources[1].dotXdot);
+        })
     });
 });
