@@ -9,13 +9,6 @@ module.exports = function (args) {
     var exitCodes = require('./exit-codes.js');
 
     var fs = require('fs');
-    // Write to output file only once, the other results go to stdout
-    var firstTarget = args.o ? fs.createWriteStream(args.o) : process.stdout;
-
-    firstTarget.on('error', function (err) {
-        console.error(err);
-        process.exit(exitCodes.writeErr);
-    });
 
     if (args.files.length)
         args.files.forEach(function (file, i) {
@@ -25,7 +18,7 @@ module.exports = function (args) {
                 console.error(err);
                 process.exit(exitCodes.readErr);
             }
-            write(generate(input, args), i > 0 ? process.stdout : firstTarget);
+            write(generate(input, args), i, args);
         });
     else {
         var input = '';
@@ -33,7 +26,7 @@ module.exports = function (args) {
             input += data;
         });
         process.stdin.on('end', function () {
-            write(generate(input, args), firstTarget);
+            write(generate(input, args), 0, args);
         });
     }
 };
