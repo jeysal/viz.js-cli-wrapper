@@ -27,7 +27,7 @@
     "twopi": "src/main/js/vizw.js"
   },
   "scripts": {
-    "test": "mocha src/test/js"
+    "test": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec src/test/js"
   },
   "dependencies": {
     "argparse": "1.0.7",
@@ -36,6 +36,7 @@
   "devDependencies": {
     "mocha": "3.0.2",
     "chai": "3.5.0",
+    "istanbul": "0.4.4",
     "std-mocks": "1.0.1",
     "mock-stdin": "0.3.0",
     "tmp": "0.0.28"
