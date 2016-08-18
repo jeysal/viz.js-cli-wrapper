@@ -32,7 +32,8 @@ describe('The CLI called', function () {
             gv: fs.readFileSync(basePath + 'source.gv', 'utf8'),
             dotXdot: fs.readFileSync(basePath + 'dot.xdot', 'utf8'),
             circoXdot: fs.readFileSync(basePath + 'circo.xdot', 'utf8'),
-            dotSvg: fs.readFileSync(basePath + 'dot.svg', 'utf8')
+            dotSvg: fs.readFileSync(basePath + 'dot.svg', 'utf8'),
+            circoSvg: fs.readFileSync(basePath + 'circo.svg', 'utf8')
         };
     });
 
