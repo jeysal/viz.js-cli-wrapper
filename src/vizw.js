@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 'use strict';
 
-var args = require('./parse.js')();
-require('./run.js')(args);
+var args = require('./parse')();
+require('./run')(args);

@@ -1,7 +1,7 @@
 'use strict';
 
 describe('The CLI called', function () {
-    var run = require('../src/run.js');
+    var run = require('../src/run');
     var args;
 
     this.timeout(10000);

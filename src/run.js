@@ -4,9 +4,9 @@ module.exports = function (args) {
     if (args.V)
         return console.log(args.prog + ' - graphviz version 2.38.0 (20140413.2041)');
 
-    var generate = require('./generate.js');
-    var write = require('./write.js');
-    var exitCodes = require('./exit-codes.js');
+    var generate = require('./generate');
+    var write = require('./write');
+    var exitCodes = require('./exit-codes');
 
     var fs = require('fs');
 
