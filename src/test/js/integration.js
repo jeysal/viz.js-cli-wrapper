@@ -1,7 +1,7 @@
 'use strict';
 
 describe('The CLI called', function () {
-    var run = require('../src/run');
+    var run = require('../../main/js/run');
     var args;
 
     this.timeout(10000);
@@ -24,10 +24,10 @@ describe('The CLI called', function () {
 
     // resources
     var fs = require('fs');
-    var gv = fs.readFileSync('test/resources/source.gv', 'utf8');
-    var dotXdot = fs.readFileSync('test/resources/dot.xdot', 'utf8');
-    var circoXdot = fs.readFileSync('test/resources/circo.xdot', 'utf8');
-    var dotSvg = fs.readFileSync('test/resources/dot.svg', 'utf8');
+    var gv = fs.readFileSync('src/test/resources/source.gv', 'utf8');
+    var dotXdot = fs.readFileSync('src/test/resources/dot.xdot', 'utf8');
+    var circoXdot = fs.readFileSync('src/test/resources/circo.xdot', 'utf8');
+    var dotSvg = fs.readFileSync('src/test/resources/dot.svg', 'utf8');
 
     beforeEach(function () {
         args = {K: null, T: 'xdot', V: false, o: null, inputs: [], prog: 'dot'};
@@ -135,7 +135,7 @@ describe('The CLI called', function () {
 
     describe('with input files', function () {
         it('should read from a single input file', function () {
-            args.inputs.push('test/resources/source.gv');
+            args.inputs.push('src/test/resources/source.gv');
 
             run(args);
             stdout().should.equal(dotXdot);
