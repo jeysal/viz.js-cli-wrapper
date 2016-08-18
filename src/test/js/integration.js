@@ -24,10 +24,12 @@ describe('The CLI called', function () {
 
     // resources
     var fs = require('fs');
-    var gv = fs.readFileSync('src/test/resources/source.gv', 'utf8');
-    var dotXdot = fs.readFileSync('src/test/resources/dot.xdot', 'utf8');
-    var circoXdot = fs.readFileSync('src/test/resources/circo.xdot', 'utf8');
-    var dotSvg = fs.readFileSync('src/test/resources/dot.svg', 'utf8');
+    var resourcePath = 'src/test/resources/';
+
+    var gv = fs.readFileSync(resourcePath + 'source.gv', 'utf8');
+    var dotXdot = fs.readFileSync(resourcePath + 'dot.xdot', 'utf8');
+    var circoXdot = fs.readFileSync(resourcePath + 'circo.xdot', 'utf8');
+    var dotSvg = fs.readFileSync(resourcePath + 'dot.svg', 'utf8');
 
     beforeEach(function () {
         args = {K: null, T: 'xdot', V: false, o: null, inputs: [], prog: 'dot'};
@@ -135,7 +137,7 @@ describe('The CLI called', function () {
 
     describe('with input files', function () {
         it('should read from a single input file', function () {
-            args.inputs.push('src/test/resources/source.gv');
+            args.inputs.push(resourcePath + 'source.gv');
 
             run(args);
             stdout().should.equal(dotXdot);
