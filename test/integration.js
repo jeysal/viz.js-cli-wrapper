@@ -4,6 +4,8 @@ describe('The CLI called', function () {
     var run = require('../src/run.js');
     var args;
 
+    this.timeout(10000);
+
     // chai
     require('chai').should();
 
