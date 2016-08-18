@@ -155,4 +155,21 @@ describe('The CLI called', function () {
             stdout().should.equal(resources[0].dotXdot + resources[1].dotXdot);
         })
     });
+
+    describe('with multiple arguments', function () {
+        it('should read from multiple input files and write the first to the output file and the following to stdout ' +
+            'in the specified format, using the specified layout regardless of the called executable', function () {
+            args.prog = 'fdp';
+            args.K = 'circo';
+            args.T = 'svg';
+            var file = tmp.fileSync();
+            args.o = file.name;
+            args.inputs.push(resourcePath + '0/source.gv', resourcePath + '1/source.gv');
+
+            run(args);
+
+            fs.readFileSync(file.name, 'utf8').should.equal(resources[0].circoSvg);
+            stdout().should.equal(resources[1].circoSvg);
+        });
+    });
 });
