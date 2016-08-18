@@ -10,17 +10,19 @@ module.exports = function () {
     parser.addArgument('-K', {
         choices: ['circo', 'dot', 'fdp', 'neato', 'osage', 'twopi'],
         metavar: 'layout',
-        help: 'Specifies which default layout algorithm to use, overriding the default from the executable.'
+        help: 'Specifies which default layout algorithm to use, overriding the default from the executable. ' +
+        'circo, dot, fdp, neato, osage and twopi are supported.'
     });
     parser.addArgument('-T', {
         choices: ['svg', 'xdot', 'plain', 'ps'],
         defaultValue: 'xdot',
         metavar: 'format',
-        help: 'Set output language to one of the supported formats. By default, xdot is produced.'
+        help: 'Set output language to one of the supported formats svg, xdot, plain and ps. ' +
+        'By default, xdot is produced.'
     });
     parser.addArgument('-V', {
         action: 'storeTrue',
-        help: 'Emit version information and exit.'
+        help: 'Emit version information and exit. viz.js-cli-wrapper will pretend to be version 2.38.0 (20140413.2041).'
     });
     parser.addArgument('-o', {
         metavar: 'outfile',
