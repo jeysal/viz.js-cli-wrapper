@@ -18,7 +18,7 @@ module.exports = function () {
         defaultValue: 'xdot',
         metavar: 'format',
         help: 'Set output language to one of the supported formats svg, xdot, plain and ps. ' +
-        'By default, xdot is produced.'
+        'By default, xdot is produced. GraphViz\' additional renderer and formatter options are not supported.'
     });
     parser.addArgument('-V', {
         action: 'storeTrue',
