@@ -19,3 +19,34 @@ or locally for your package
     npm install --save viz.js-cli-wrapper
 
 ## Usage
+
+### Executables
+
+The package provides six GraphViz-like executables:  
+* `circo`
+* `dot`
+* `fdp`
+* `neato`
+* `osage`
+* `twopi`
+
+If you chose to install globally, npm should have already made them available on your PATH so you can run them everywhere.  
+If you need to locate them, `npm bin -g` will point you to their location (usually `/usr/bin`, or `%APPDATA%/npm` on Windows).
+
+If you installed locally, running `npm bin` in your package will print their location, usually `node_modules/.bin`.
+
+### Command-line interface
+
+The command line interface is very similar to that of GraphViz itself, however, options are limited as viz.js does not support the whole range of GraphViz' features.
+The following GraphViz options are currently supported:
+* `-K`
+* `-T`
+* `-V`
+* `-o`
+* input files
+
+For the full help text containing further information, run any of the executables with the `-h` flag, e.g. `dot -h`.
+
+## Credits
+
+A huge thanks to [Mike Daines](https://github.com/mdaines) for making GraphViz to some extent portable with [viz.js](https://github.com/mdaines/viz.js)!
