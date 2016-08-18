@@ -19,6 +19,9 @@ describe('The CLI called', function () {
     // mock-stdin
     var stdin = require('mock-stdin').stdin();
 
+    // tmp
+    var tmp = require('tmp');
+
     // resources
     var fs = require('fs');
     var gv = fs.readFileSync('test/resources/source.gv', 'utf8');
