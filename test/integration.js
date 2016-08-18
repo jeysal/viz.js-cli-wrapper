@@ -47,13 +47,16 @@ describe('The CLI called', function () {
             run(args);
             stdin.send(gv);
             stdin.end();
+
             stdout().should.equal(dotXdot);
         });
         it('should use the layout of the called executable', function () {
             args.prog = 'circo';
+
             run(args);
             stdin.send(gv);
             stdin.end();
+
             stdout().should.equal(circoXdot);
         });
     });
@@ -62,9 +65,11 @@ describe('The CLI called', function () {
         it('should use the specified layout regardless of the called executable', function () {
             args.prog = 'fdp';
             args.K = 'circo';
+
             run(args);
             stdin.send(gv);
             stdin.end();
+
             stdout().should.equal(circoXdot);
         })
     });
@@ -72,9 +77,11 @@ describe('The CLI called', function () {
     describe('with -T', function () {
         it('should produce the specified format', function () {
             args.T = 'svg';
+
             run(args);
             stdin.send(gv);
             stdin.end();
+
             stdout().should.equal(dotSvg);
         });
     });
@@ -86,11 +93,14 @@ describe('The CLI called', function () {
 
         it('should print version information', function () {
             run(args);
+
             stdout().should.equal('dot - graphviz version 2.38.0 (20140413.2041)\n');
         });
         it('should print the called executable name', function () {
             args.prog = 'circo';
+
             run(args);
+
             stdout().should.equal('circo - graphviz version 2.38.0 (20140413.2041)\n');
         });
     });
@@ -99,9 +109,11 @@ describe('The CLI called', function () {
         it('should write to the output file', function () {
             var file = tmp.fileSync();
             args.o = file.name;
+
             run(args);
             stdin.send(gv);
             stdin.end();
+
             fs.readFileSync(file.name, 'utf8').should.equal(dotXdot);
         });
     });
