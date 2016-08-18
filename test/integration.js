@@ -132,4 +132,13 @@ describe('The CLI called', function () {
             stdout().should.equal('');
         });
     });
+
+    describe('with input files', function () {
+        it('should read from a single input file', function () {
+            args.inputs.push('test/resources/source.gv');
+
+            run(args);
+            stdout().should.equal(dotXdot);
+        });
+    });
 });
