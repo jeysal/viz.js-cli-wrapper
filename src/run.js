@@ -10,8 +10,8 @@ module.exports = function (args) {
 
     var fs = require('fs');
 
-    if (args.files.length)
-        args.files.forEach(function (file, i) {
+    if (args.inputs.length)
+        args.inputs.forEach(function (file, i) {
             try {
                 var input = fs.readFileSync(file, 'utf8');
             } catch (err) {

@@ -30,7 +30,7 @@ describe('The CLI called', function () {
     var dotSvg = fs.readFileSync('test/resources/dot.svg', 'utf8');
 
     beforeEach(function () {
-        args = {K: null, T: 'xdot', V: false, o: null, files: [], prog: 'dot'};
+        args = {K: null, T: 'xdot', V: false, o: null, inputs: [], prog: 'dot'};
 
         stdMocks.use();
     });
