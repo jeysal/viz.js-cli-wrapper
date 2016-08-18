@@ -54,6 +54,17 @@ describe('The CLI called', function () {
         });
     });
 
+    describe('with -K', function () {
+        it('should use the specified layout regardless of the called executable', function () {
+            args.prog = 'fdp';
+            args.K = 'circo';
+            run(args);
+            stdin.send(gv);
+            stdin.end();
+            stdout().should.equal(circoXdot);
+        })
+    });
+
     describe('with -V', function () {
         beforeEach(function () {
             args.V = true;
