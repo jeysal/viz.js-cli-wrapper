@@ -48,6 +48,13 @@ The following GraphViz options are currently supported:
 
 For the full help text containing further information, run any of the executables with the `-h` flag, e.g. `dot -h`.
 
+### Exit codes
+
+* `70` - failed to read an input file
+* `80` - failed to write to the output file
+
+All other exit codes indicate invalid CLI usage or rendering errors from viz.js.
+
 ## Credits
 
 A huge thanks to [Mike Daines](https://github.com/mdaines) for making GraphViz to some extent portable with [viz.js](https://github.com/mdaines/viz.js)!
