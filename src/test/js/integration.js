@@ -2,6 +2,7 @@
 
 describe('The CLI called', function () {
     var run = require('../../main/js/run');
+    var exit = require('../../main/js/exit');
     var args;
 
     this.timeout(10000);
@@ -44,6 +45,8 @@ describe('The CLI called', function () {
     });
 
     afterEach(function () {
+        exit.reset();
+
         stdMocks.restore();
         stdMocks.flush();
 
