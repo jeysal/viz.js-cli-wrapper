@@ -43,7 +43,9 @@ If you installed locally, running `npm bin` in your package will print their loc
 
 ### Command-line interface
 
-The command line interface is very similar to that of GraphViz itself, however, options are limited as viz.js does not support the whole range of GraphViz' features.
+The command line interface is very similar to that of GraphViz itself, however,
+options are limited as viz.js does not support the whole range of GraphViz' features.
+
 The following GraphViz options are currently supported:
 * `-K`
 * `-T`
