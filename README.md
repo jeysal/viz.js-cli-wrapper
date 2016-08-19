@@ -62,6 +62,20 @@ For the full help text containing further information, run any of the executable
 * `80` - failed to write to the output file
 * `100` - rendering error from viz.js
 
+## PlantUML
+
+A common use case for GraphViz is generating UML diagrams via [PlantUML](http://plantuml.com).
+As a Java application, PlantUML is nicely portable and runs on all platforms, however,
+its dependency to GraphViz' dot engine makes the setup on different platforms annoying.
+
+Using viz.js-cli-wrapper, you can easily set it up anywhere. If you installed it globally,
+depending on your system PlantUML might just locate the dot executable out of the box.
+In any case, you can [tell PlantUML where to find it](http://plantuml.com/command_line.html)
+using the GRAPHVIZ_DOT environment variable or the -graphvizdot CLI switch.
+
+See the [Executables section](#Executables) on where to find the viz.js-cli-wrapper executables.
+On Windows, you need to specify the path to "dot.cmd" including the ending, otherwise PlantUML will not find it.
+
 ## Credits
 
 A huge thanks to [Mike Daines](https://github.com/mdaines) for making GraphViz to some extent portable with [viz.js](https://github.com/mdaines/viz.js)!
