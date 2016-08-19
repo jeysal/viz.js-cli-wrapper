@@ -55,10 +55,10 @@ For the full help text containing further information, run any of the executable
 
 ### Exit codes
 
+* `2` - invalid CLI usage
 * `70` - failed to read an input file
 * `80` - failed to write to the output file
-
-All other exit codes indicate invalid CLI usage or rendering errors from viz.js.
+* `100` - rendering error from viz.js
 
 ## Credits
 
