@@ -73,7 +73,7 @@ depending on your system PlantUML might just locate the dot executable out of th
 In any case, you can [tell PlantUML where to find it](http://plantuml.com/command_line.html)
 using the GRAPHVIZ_DOT environment variable or the -graphvizdot CLI switch.
 
-See the [Executables section](#Executables) on where to find the viz.js-cli-wrapper executables.
+See the [Executables section](#executables) on where to find the viz.js-cli-wrapper executables.
 On Windows, you need to specify the path to "dot.cmd" including the ending, otherwise PlantUML will not find it.
 
 ## Credits
