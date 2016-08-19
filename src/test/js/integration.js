@@ -193,6 +193,22 @@ describe('The CLI called', function () {
 
             stdout().should.equal(resources[0].dotXdot + resources[1].dotXdot);
         });
+        it('should exit with readErr when passed a directory path', function () {
+            exit.fake = true;
+            args.inputs.push('.');
+
+            run(args);
+
+            exit.records.should.eql([exit.codes.readErr]);
+        });
+        it('should exit with readErr when passed a nonexistent path', function () {
+            exit.fake = true;
+            args.inputs.push(tmp.tmpNameSync());
+
+            run(args);
+
+            exit.records.should.eql([exit.codes.readErr]);
+        });
     });
 
     describe('with multiple arguments', function () {
