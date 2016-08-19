@@ -19,12 +19,12 @@
   ],
   "main": "src/main/js/run.js",
   "bin": {
-    "circo": "src/main/js/vizw.js",
-    "dot": "src/main/js/vizw.js",
-    "fdp": "src/main/js/vizw.js",
-    "neato": "src/main/js/vizw.js",
-    "osage": "src/main/js/vizw.js",
-    "twopi": "src/main/js/vizw.js"
+    "circo": "src/main/js/cli/circo.js",
+    "dot": "src/main/js/cli/dot.js",
+    "fdp": "src/main/js/cli/fdp.js",
+    "neato": "src/main/js/cli/neato.js",
+    "osage": "src/main/js/cli/osage.js",
+    "twopi": "src/main/js/cli/twopi.js"
   },
   "scripts": {
     "test": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec src/test/js"

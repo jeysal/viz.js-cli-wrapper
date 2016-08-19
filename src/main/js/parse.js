@@ -43,6 +43,6 @@ module.exports = function () {
     });
 
     var args = parser.parseArgs();
-    args.prog = parser.prog;
+    args.prog = require('path').parse(parser.prog).name;
     return args;
 };
