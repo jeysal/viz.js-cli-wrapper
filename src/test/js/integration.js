@@ -76,6 +76,15 @@ describe('The CLI called', function () {
 
             stdout().should.have.length(0);
         });
+        it('should exit with genErr when passed invalid input', function () {
+            exit.fake = true;
+
+            run(args);
+            stdin.send('asdf');
+            stdin.end();
+
+            exit.records.should.eql([exit.codes.genErr]);
+        });
     });
 
     describe('with -K', function () {
