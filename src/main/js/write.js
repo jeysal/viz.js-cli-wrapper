@@ -8,7 +8,8 @@ module.exports = function (data, index, args) {
             require('fs').writeFileSync(file, data, 'utf8');
         } catch (err) {
             console.error(err);
-            process.exit(require('./exit').codes.writeErr);
+            var exit = require('./exit');
+            return exit(exit.codes.writeErr);
         }
     else
         process.stdout.write(data);

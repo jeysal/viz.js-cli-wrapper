@@ -16,7 +16,7 @@ module.exports = function (args) {
                 var input = fs.readFileSync(file, 'utf8');
             } catch (err) {
                 console.error(err);
-                process.exit(exit.codes.readErr);
+                return exit(exit.codes.readErr);
             }
             write(generate(input, args), i, args);
         });
