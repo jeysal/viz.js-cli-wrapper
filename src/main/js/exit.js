@@ -10,7 +10,8 @@ exit.reset();
 
 exit.codes = {
     readErr: 70,
-    writeErr: 80
+    writeErr: 80,
+    genErr: 100
 };
 
 module.exports = exit;
