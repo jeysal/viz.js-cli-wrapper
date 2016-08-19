@@ -67,6 +67,12 @@ describe('The CLI called', function () {
 
             stdout().should.equal(resources[0].circoXdot);
         });
+        it('should produce empty stdout from empty stdin', function () {
+            run(args);
+            stdin.end();
+
+            stdout().should.have.length(0);
+        });
     });
 
     describe('with -K', function () {
