@@ -6,7 +6,7 @@ module.exports = function (args) {
 
     var generate = require('./generate');
     var write = require('./write');
-    var exitCodes = require('./exit-codes');
+    var exit = require('./exit');
 
     var fs = require('fs');
 
@@ -16,7 +16,7 @@ module.exports = function (args) {
                 var input = fs.readFileSync(file, 'utf8');
             } catch (err) {
                 console.error(err);
-                process.exit(exitCodes.readErr);
+                process.exit(exit.readErr);
             }
             write(generate(input, args), i, args);
         });
