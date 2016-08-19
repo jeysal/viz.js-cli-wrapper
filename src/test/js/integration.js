@@ -157,6 +157,25 @@ describe('The CLI called', function () {
 
             stdout().should.equal('');
         });
+        it('should exit with writeErr when passed a directory path', function () {
+            exit.fake = true;
+            args.o = '.';
+
+            run(args);
+            stdin.end();
+
+            exit.records.should.eql([exit.codes.writeErr]);
+        });
+        it('should exit with writeErr when passed an unwritable path', function () {
+            exit.fake = true;
+            var file = tmp.fileSync({mode: 0o444});
+            args.o = file.name;
+
+            run(args);
+            stdin.end();
+
+            exit.records.should.eql([exit.codes.writeErr]);
+        });
     });
 
     describe('with input files', function () {
