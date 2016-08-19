@@ -1,7 +1,7 @@
 # viz.js-cli-wrapper
 
 [![build status](https://img.shields.io/travis/jeysal/viz.js-cli-wrapper.svg?style=flat-square)](https://travis-ci.org/jeysal/viz.js-cli-wrapper)
-[![AppVeyor](https://img.shields.io/appveyor/ci/jeysal/viz-js-cli-wrapper.svg?style=flat-square)](https://ci.appveyor.com/project/jeysal/viz-js-cli-wrapper)
+[![AppVeyor build status](https://img.shields.io/appveyor/ci/jeysal/viz-js-cli-wrapper.svg?style=flat-square&label=windows+build)](https://ci.appveyor.com/project/jeysal/viz-js-cli-wrapper)
 [![code coverage](https://img.shields.io/codecov/c/github/jeysal/viz.js-cli-wrapper.svg?style=flat-square)](https://codecov.io/gh/jeysal/viz.js-cli-wrapper)
 
 [![dependencies](https://img.shields.io/david/jeysal/viz.js-cli-wrapper.svg?style=flat-square)](https://github.com/jeysal/viz.js-cli-wrapper)
