@@ -10,7 +10,7 @@
 
 A command line interface wrapped around [viz.js](https://github.com/mdaines/viz.js).
 
-Provides a cross-platform way to use core GraphViz features with similar command line syntax.
+Provides a cross-platform way to use core [GraphViz](http://www.graphviz.org/) features with similar command line syntax.
 
 ## Installation
 
