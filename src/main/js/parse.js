@@ -9,15 +9,18 @@ module.exports = function () {
         addHelp: true
     });
 
+    var layouts = ['circo', 'dot', 'fdp', 'neato', 'osage', 'twopi'];
+    var formats = ['svg', 'xdot', 'plain', 'ps'];
+
     // flags
     parser.addArgument('-K', {
-        choices: ['circo', 'dot', 'fdp', 'neato', 'osage', 'twopi'],
+        choices: layouts,
         metavar: 'layout',
         help: 'Specifies which default layout algorithm to use, overriding the default from the executable. ' +
         'circo, dot, fdp, neato, osage and twopi are supported.'
     });
     parser.addArgument('-T', {
-        choices: ['svg', 'xdot', 'plain', 'ps'],
+        choices: formats,
         defaultValue: 'xdot',
         metavar: 'format',
         help: 'Set output language to one of the supported formats svg, xdot, plain and ps. ' +
