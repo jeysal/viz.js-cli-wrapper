@@ -1,7 +1,10 @@
 module.exports = function () {
     'use strict';
 
-    var ArgumentParser = require('argparse').ArgumentParser;
+    var argparse = require('argparse');
+    var ArgumentParser = argparse.ArgumentParser;
+    var Const = argparse.Const;
+
     var parser = new ArgumentParser({
         addHelp: true
     });
@@ -31,7 +34,7 @@ module.exports = function () {
 
     // pos args
     parser.addArgument('inputs', {
-        nargs: '*',
+        nargs: Const.ZERO_OR_MORE,
         metavar: 'input file',
         help: 'Specifies an input file. If no input files are supplied, the program reads from stdin.'
     });
