@@ -157,6 +157,19 @@ describe('The CLI called', function () {
 
             stdout().should.equal('');
         });
+        it('should create any necessary parent directories', function () {
+            var path = require('path');
+
+            var dir = tmp.tmpNameSync();
+            var file = path.join(dir, 'asdf');
+            args.o = file;
+
+            run(args);
+            stdin.send(resources[0].gv);
+            stdin.end();
+
+            fs.readFileSync(file, 'utf8').should.equal(resources[0].dotXdot);
+        });
         it('should exit with writeErr when passed a directory path', function () {
             exit.fake = true;
             args.o = '.';
