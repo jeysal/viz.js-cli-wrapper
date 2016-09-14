@@ -16,7 +16,7 @@ Provides a cross-platform way to use core [GraphViz](http://www.graphviz.org/) f
 
 ### npm
 
-You can install it using [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/), globally on your system
+You can install it using [Node.js](https://nodejs.org/) version 5 or higher and [npm](https://www.npmjs.com/), globally on your system
 
     npm install -g viz.js-cli-wrapper
 
