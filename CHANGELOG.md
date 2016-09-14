@@ -1,9 +1,12 @@
 # Changelog
 
-## 1.1.2
+## 1.1.3
 
 ### Bugfixes
 * add missing mkdirp dependency
+
+## 1.1.2
+no changes
 
 ## 1.1.1
 
