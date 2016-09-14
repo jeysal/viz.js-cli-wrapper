@@ -5,7 +5,14 @@ module.exports = function (data, index, args) {
 
     if (file)
         try {
-            require('fs').writeFileSync(file, data, 'utf8');
+            var mkdirp = require('mkdirp');
+            var fs = require('fs');
+            var dirname = require('path').dirname;
+
+            // Make sure the parent directory exists
+            mkdirp.sync(dirname(file));
+
+            fs.writeFileSync(file, data, 'utf8');
         } catch (err) {
             console.error(err);
             var exit = require('./exit');
