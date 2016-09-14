@@ -1,4 +1,8 @@
 # Changelog
+## 1.1.1
+
+### Bugfixes
+* create necessary parent directories for output file
 
 ## 1.1.0
 
