@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.4
+
+### Other
+* update dependencies
+
 ## 1.1.3
 
 ### Bugfixes
