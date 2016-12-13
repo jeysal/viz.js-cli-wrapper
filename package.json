@@ -35,7 +35,7 @@
     "mkdirp": "0.5.1"
   },
   "devDependencies": {
-    "mocha": "3.1.2",
+    "mocha": "3.2.0",
     "chai": "3.5.0",
     "istanbul": "0.4.5",
     "std-mocks": "1.0.1",
