@@ -8,6 +8,8 @@ node_js:
   - "6"
   - "5"
 
+cache: yarn
+
 script:
   - npm test
 
