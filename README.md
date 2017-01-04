@@ -4,8 +4,6 @@
 [![AppVeyor build status](https://img.shields.io/appveyor/ci/jeysal/viz-js-cli-wrapper.svg?style=flat-square&label=windows+build)](https://ci.appveyor.com/project/jeysal/viz-js-cli-wrapper)
 [![code coverage](https://img.shields.io/codecov/c/github/jeysal/viz.js-cli-wrapper.svg?style=flat-square)](https://codecov.io/gh/jeysal/viz.js-cli-wrapper)
 
-[![dependencies](https://img.shields.io/david/jeysal/viz.js-cli-wrapper.svg?style=flat-square)](https://github.com/jeysal/viz.js-cli-wrapper)
-[![devDependencies](https://img.shields.io/david/dev/jeysal/viz.js-cli-wrapper.svg?style=flat-square)](https://github.com/jeysal/viz.js-cli-wrapper)
 [![license](https://img.shields.io/github/license/jeysal/viz.js-cli-wrapper.svg?style=flat-square)](https://github.com/jeysal/viz.js-cli-wrapper/blob/master/LICENSE)
 
 A command line interface wrapped around [viz.js](https://github.com/mdaines/viz.js).
