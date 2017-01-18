@@ -4,16 +4,17 @@ module.exports = function (args) {
     if (args.V)
         return console.log(args.prog + ' - graphviz version 2.38.0 (20140413.2041)');
 
-    var generate = require('./generate');
-    var write = require('./write');
-    var exit = require('./exit');
+    const generate = require('./generate');
+    const write = require('./write');
+    const exit = require('./exit');
 
-    var fs = require('fs');
+    const fs = require('fs');
 
     if (args.inputs.length)
         args.inputs.forEach(function (file, i) {
+            let input;
             try {
-                var input = fs.readFileSync(file, 'utf8');
+                input = fs.readFileSync(file, 'utf8');
             } catch (err) {
                 console.error(err);
                 return exit(exit.codes.readErr);
@@ -21,7 +22,7 @@ module.exports = function (args) {
             write(generate(input, args), i, args);
         });
     else {
-        var input = '';
+        let input = '';
         process.stdin.on('data', function (data) {
             input += data;
         });

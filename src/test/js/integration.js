@@ -39,7 +39,7 @@ describe('The CLI called', function () {
     });
 
     beforeEach(function () {
-        args = {K: null, T: 'xdot', V: false, o: null, inputs: [], prog: 'dot'};
+        args = { K: null, T: 'xdot', V: false, o: null, inputs: [], prog: 'dot' };
 
         stdMocks.use();
     });
@@ -181,7 +181,7 @@ describe('The CLI called', function () {
         });
         it('should exit with writeErr when passed an unwritable path', function () {
             exit.fake = true;
-            var file = tmp.fileSync({mode: 0o444});
+            var file = tmp.fileSync({ mode: 0o444 });
             args.o = file.name;
 
             run(args);

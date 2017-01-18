@@ -1,13 +1,13 @@
 module.exports = function (data, index, args) {
     'use strict';
 
-    var file = index === 0 && args.o;
+    const file = index === 0 && args.o;
 
     if (file)
         try {
-            var mkdirp = require('mkdirp');
-            var fs = require('fs');
-            var dirname = require('path').dirname;
+            const mkdirp = require('mkdirp');
+            const fs = require('fs');
+            const dirname = require('path').dirname;
 
             // Make sure the parent directory exists
             mkdirp.sync(dirname(file));
@@ -15,7 +15,7 @@ module.exports = function (data, index, args) {
             fs.writeFileSync(file, data, 'utf8');
         } catch (err) {
             console.error(err);
-            var exit = require('./exit');
+            const exit = require('./exit');
             return exit(exit.codes.writeErr);
         }
     else

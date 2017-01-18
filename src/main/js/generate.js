@@ -11,7 +11,7 @@ module.exports = function (data, args) {
         });
     } catch (err) {
         console.error(err);
-        var exit = require('./exit');
+        const exit = require('./exit');
         return exit(exit.codes.genErr);
     }
 };

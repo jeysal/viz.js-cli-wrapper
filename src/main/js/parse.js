@@ -1,16 +1,16 @@
 module.exports = function () {
     'use strict';
 
-    var argparse = require('argparse');
-    var ArgumentParser = argparse.ArgumentParser;
-    var Const = argparse.Const;
+    const argparse = require('argparse');
+    const ArgumentParser = argparse.ArgumentParser;
+    const Const = argparse.Const;
 
-    var parser = new ArgumentParser({
+    const parser = new ArgumentParser({
         addHelp: true
     });
 
-    var layouts = ['circo', 'dot', 'fdp', 'neato', 'osage', 'twopi'];
-    var formats = ['svg', 'xdot', 'plain', 'ps'];
+    const layouts = ['circo', 'dot', 'fdp', 'neato', 'osage', 'twopi'];
+    const formats = ['svg', 'xdot', 'plain', 'ps'];
 
     // flags
     parser.addArgument('-K', {
@@ -42,7 +42,7 @@ module.exports = function () {
         help: 'Specifies an input file. If no input files are supplied, the program reads from stdin.'
     });
 
-    var args = parser.parseArgs();
+    const args = parser.parseArgs();
     args.prog = require('path').parse(parser.prog).name;
     return args;
 };
