@@ -1,6 +1,6 @@
 {
   "name": "viz.js-cli-wrapper",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A small wrapper for viz.js that provides a command line interface similar to the original GraphViz",
   "keywords": [
     "GraphViz",

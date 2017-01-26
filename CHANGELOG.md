@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.1
+
+### Bugfixes
+
+* fix npm package
+
 
 ## 1.2.0
 _update viz.js_
@@ -17,6 +23,7 @@ _update viz.js_
 ## 1.1.3
 
 ### Bugfixes
+
 * add missing mkdirp dependency
 
 
