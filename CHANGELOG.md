@@ -1,7 +1,12 @@
 # Changelog
 
 
-## 1.1.4
+## 1.2.0
+_update viz.js_
+
+_graphviz 2.38.0 -> 2.40.1_
+
+## 1.1.5
 _update viz.js_
 
 
