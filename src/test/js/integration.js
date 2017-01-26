@@ -120,14 +120,14 @@ describe('The CLI called', function () {
         it('should print version information', function () {
             run(args);
 
-            stdout().should.equal('dot - graphviz version 2.38.0 (20140413.2041)\n');
+            stdout().should.equal('dot - graphviz version 2.40.1 (20161225.0304)\n');
         });
         it('should print the called executable name', function () {
             args.prog = 'circo';
 
             run(args);
 
-            stdout().should.equal('circo - graphviz version 2.38.0 (20140413.2041)\n');
+            stdout().should.equal('circo - graphviz version 2.40.1 (20161225.0304)\n');
         });
         it('should return quickly', function () {
             this.timeout(100);

@@ -479,8 +479,8 @@ uglify-to-browserify@~1.0.0:
   resolved "https://registry.yarnpkg.com/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz#6e0924d6bda6b5afe349e39a6d632850a0f882b7"
 
 viz.js@^1.4.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/viz.js/-/viz.js-1.5.1.tgz#3952b816f80fb3435eda50803c6aaa9ccd54d6af"
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/viz.js/-/viz.js-1.6.0.tgz#69d537533f076b479f43259f1c6ac0799a89fe7a"
 
 which@^1.1.1:
   version "1.2.12"
