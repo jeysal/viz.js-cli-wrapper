@@ -1,9 +1,9 @@
 'use strict';
 
 describe('The CLI called', function () {
-    var run = require('../../main/js/run');
-    var exit = require('../../main/js/exit');
-    var args;
+    const run = require('../../main/js/run');
+    const exit = require('../../main/js/exit');
+    let args;
 
     this.timeout(10000);
 
@@ -11,24 +11,24 @@ describe('The CLI called', function () {
     require('chai').should();
 
     // std-mocks
-    var stdMocks = require('std-mocks');
+    const stdMocks = require('std-mocks');
 
     function stdout() {
         return stdMocks.flush().stdout.join('');
     }
 
     // mock-stdin
-    var stdin = require('mock-stdin').stdin();
+    const stdin = require('mock-stdin').stdin();
 
     // tmp
-    var tmp = require('tmp');
+    const tmp = require('tmp');
 
     // resources
-    var fs = require('fs');
-    var resourcePath = 'src/test/resources/';
+    const fs = require('fs');
+    const resourcePath = 'src/test/resources/';
 
-    var resources = [0, 1].map(function (e) {
-        var basePath = resourcePath + e + '/';
+    const resources = [0, 1].map(function (e) {
+        const basePath = resourcePath + e + '/';
         return {
             gv: fs.readFileSync(basePath + 'source.gv', 'utf8'),
             dotXdot: fs.readFileSync(basePath + 'dot.xdot', 'utf8'),
@@ -138,7 +138,7 @@ describe('The CLI called', function () {
 
     describe('with -o', function () {
         it('should write to the output file', function () {
-            var file = tmp.fileSync();
+            const file = tmp.fileSync();
             args.o = file.name;
 
             run(args);
@@ -148,7 +148,7 @@ describe('The CLI called', function () {
             fs.readFileSync(file.name, 'utf8').should.equal(resources[0].dotXdot);
         });
         it('should not write to stdout', function () {
-            var file = tmp.fileSync();
+            const file = tmp.fileSync();
             args.o = file.name;
 
             run(args);
@@ -158,10 +158,10 @@ describe('The CLI called', function () {
             stdout().should.equal('');
         });
         it('should create any necessary parent directories', function () {
-            var path = require('path');
+            const path = require('path');
 
-            var dir = tmp.tmpNameSync();
-            var file = path.join(dir, 'asdf');
+            const dir = tmp.tmpNameSync();
+            const file = path.join(dir, 'asdf');
             args.o = file;
 
             run(args);
@@ -181,7 +181,7 @@ describe('The CLI called', function () {
         });
         it('should exit with writeErr when passed an unwritable path', function () {
             exit.fake = true;
-            var file = tmp.fileSync({ mode: 0o444 });
+            const file = tmp.fileSync({ mode: 0o444 });
             args.o = file.name;
 
             run(args);
@@ -230,7 +230,7 @@ describe('The CLI called', function () {
             args.prog = 'fdp';
             args.K = 'circo';
             args.T = 'svg';
-            var file = tmp.fileSync();
+            const file = tmp.fileSync();
             args.o = file.name;
             args.inputs.push(resourcePath + '0/source.gv', resourcePath + '1/source.gv');
 
