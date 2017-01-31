@@ -10,7 +10,7 @@ module.exports = function () {
     });
 
     const layouts = ['circo', 'dot', 'fdp', 'neato', 'osage', 'twopi'];
-    const formats = ['svg', 'xdot', 'plain', 'ps'];
+    const formats = ['svg', 'xdot', 'plain', 'ps', 'json'];
 
     // flags
     parser.addArgument('-K', {
@@ -23,7 +23,7 @@ module.exports = function () {
         choices: formats,
         defaultValue: 'xdot',
         metavar: 'format',
-        help: 'Set output language to one of the supported formats svg, xdot, plain and ps. ' +
+        help: 'Set output language to one of the supported formats svg, xdot, plain, ps and json. ' +
         'By default, xdot is produced. GraphViz\' additional renderer and formatter options are not supported.'
     });
     parser.addArgument('-V', {

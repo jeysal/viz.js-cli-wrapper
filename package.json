@@ -32,7 +32,7 @@
   "dependencies": {
     "argparse": "^1.0.9",
     "mkdirp": "^0.5.1",
-    "viz.js": "^1.4.1"
+    "viz.js": "^1.7.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
