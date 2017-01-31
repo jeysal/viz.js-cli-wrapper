@@ -28,7 +28,7 @@ module.exports = function () {
     });
     parser.addArgument('-V', {
         action: 'storeTrue',
-        help: 'Emit version information and exit. viz.js-cli-wrapper will pretend to be version 2.38.0 (20140413.2041).'
+        help: 'Emit version information and exit.'
     });
     parser.addArgument('-o', {
         metavar: 'outfile',
