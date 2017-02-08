@@ -46,8 +46,8 @@ The command line interface is very similar to that of GraphViz itself, however,
 options are limited as viz.js does not support the whole range of GraphViz' features.
 
 The following GraphViz options are currently supported:
-* `-K`
-* `-T`
+* `-K` (with all engines that have corresponding [executables](https://github.com/jeysal/viz.js-cli-wrapper#executables) available)
+* `-T` (with the formats `svg`, `xdot`, `plain`, `ps` and `json`)
 * `-V`
 * `-o`
 * input files
